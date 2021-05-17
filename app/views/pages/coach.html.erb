@@ -1,4 +1,7 @@
-<h4>Me: <%= params[:s] %></h4>
-<h4>Coach: <%= @answer %></h4>
+<p><strong>Me:</strong> "<%= params[:s] %>"</p>
+<p><strong>Coach:</strong> "<%= @answer %>"</p>
 
-<%= link_to "Home", home_path %>
+<% unless @answer_given %>
+  <%= link_to "Retry...", home_path %>
+<% end %>
+
